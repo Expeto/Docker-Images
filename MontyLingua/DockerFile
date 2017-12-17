@@ -1,0 +1,4 @@
+FROM python:2.7-jessie
+RUN apt-get update && apt-get install unzip && mkdir /MontyLingua && cd /MontyLingua && wget http://web.media.mit.edu/~hugo/montylingua/montylingua-2.1.zip && unzip montylingua-2.1.zip && rm montylingua-2.1.zip && rm -v ./montylingua-2.1/python/FASTLEXICON_*MDF 
+WORKDIR /MontyLingua/montylingua-2.1/python/
+CMD ["python", "MontyLingua.py"]
